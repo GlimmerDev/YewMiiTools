@@ -7,7 +7,7 @@ GBATemp thread & discussion: https://gbatemp.net/threads/yewmiitools-conversion-
 
 At the moment, there's still a few steps, but I plan to combine some of these steps to make it even easier. Also, I think I might be incorrectly converting the eye and eyebrow rotation values-- they don't seem to just directly copy over? If anyone can tell me how to convert them properly, please let me know.
 
-**There are some cosmetic values that can crash the game due to not existing in BotW. I plan to account for this eventually, but if this occurs, try removing glasses, makeup, etc.**
+**There are some cosmetic values that do not exist in BotW. I plan to account for this eventually, but if your game crashes or the NPC is missing, try removing glasses, makeup, etc.**
 
 ## Usage
 1. Place desired NPC .sbactorpack file(s) from extracted game files into the same folder as the tool. These can be found in /romfs/Actor/Pack/, see here for NPC names: https://gbatemp.net/threads/botw-item-names-for-pandaonsmacks-trainer.463959/
@@ -17,7 +17,7 @@ At the moment, there's still a few steps, but I plan to combine some of these st
 5. The script should generate "FinalResult.bumii". This is the finished injected UMii.
 6. Copy the FinalResult.bumii into the extracted NPC folder you wish to replace, and rename it to match the NPC's UMii file. (Example, /Npc_HatenoVillage001/Actor/UMii/Npc_HatenoVillage001.bumii)
 7. Now select option 3 in the tool to rebuild the NPC folders. It will prompt you to specify whether you use the Wii U or Switch version format.
-8. The script will generate "OriginalNPCName.out.sbactorpack". This is your final file that can be put back into the gamefiles or loaded with LayeredFS.
+8. The script will generate "OriginalNPCName.out.sbactorpack". This is your final file that can be put back into the gamefiles or loaded with LayeredFS. (Be sure to remove the .out part)
 
 I originally wrote this as an exercise to read Mii files from scratch (without using any other code/libraries). The other conversion tasks for this project are achieved using external bundled tools though:
 * BotWUnpacker by Shadsterwolf https://github.com/Shadsterwolf/BotWUnpacker

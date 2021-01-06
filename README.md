@@ -15,6 +15,8 @@ At the moment, there's still a few steps, but I plan to combine some of these st
 7. Run "build_sbactorpack.bat" to rebuild the NPC folders. It will prompt you to specify whether you use the Wii U or Switch version.
 8. The script will generate "OriginalNPCName.out.sbactorpack". This is your final file that can be put back into the gamefiles or loaded with LayeredFS.
 
-I originally wrote this as an exercise to read Mii files from scratch (without any external tools). Therefore the other conversion tasks are achieved using external bundled tools:
+I originally wrote this as an exercise to read Mii files from scratch (without using any other code/libraries). The other conversion tasks for this project are achieved using external bundled tools though:
 * BotWUnpacker by Shadsterwolf https://github.com/Shadsterwolf/BotWUnpacker
 * BotW-aampTool by Zer0XoL https://github.com/Zer0XoL/BotW-aampTool
+
+This is probably *far* from the most efficient way to do this conversion, but it works for my own purposes.

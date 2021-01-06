@@ -5,6 +5,8 @@ Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/
 
 At the moment, there's still a few steps, but I plan to combine some of these steps to make it even easier. Also, I think I might be incorrectly converting the eye and eyebrow rotation values-- they don't seem to just directly copy over? If anyone can tell me how to convert them properly, please let me know.
 
+**There are some cosmetic values that can crash the game due to not existing in BotW. I plan to account for this eventually, but if this occurs, try removing glasses, makeup, etc.**
+
 ## Usage
 1. Place desired NPC .sbactorpack file(s) from extracted game files into the same folder as the tool. These can be found in /romfs/Actor/Pack/, see here for NPC names: https://gbatemp.net/threads/botw-item-names-for-pandaonsmacks-trainer.463959/
 2. Place your 3DS/WiiU format .mii file(s) into the same folder as the tool.

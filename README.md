@@ -1,6 +1,8 @@
 # YewMiiTools
 Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii.
 
+Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/tag/v0.1
+
 At the moment, there's still a few steps, but I plan to combine some of these steps to make it even easier. Also, I think I might be incorrectly converting the eye and eyebrow rotation values-- they don't seem to just directly copy over? If anyone can tell me how to convert them properly, please let me know.
 
 ## Usage

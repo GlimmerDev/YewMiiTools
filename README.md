@@ -20,3 +20,11 @@ I originally wrote this as an exercise to read Mii files from scratch (without u
 * BotW-aampTool by Zer0XoL https://github.com/Zer0XoL/BotW-aampTool
 
 This is probably *far* from the most efficient way to do this conversion, but it works for my own purposes.
+
+## Examples
+Dio Brando
+![Dio](https://i.imgur.com/RANgWrH.jpg)
+Reggie Fils-Aime
+![Reggie](https://i.imgur.com/BUpPJNE.jpg)
+LeifEricson
+![Leif](https://i.imgur.com/AKm773Y.jpg)

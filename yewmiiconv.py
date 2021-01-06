@@ -1,6 +1,8 @@
 #! /usr/bin/python
 import xml.etree.ElementTree as ET
 import sys
+import os
+from shutil import copy
 
 mii = {}
 
@@ -250,18 +252,67 @@ def writeUMii(filename, outfilename):
     glassescol.text = str(mii['glassescol'])
 
     tree.write(outfilename)
+    
+def extractActorPacks():
+    directory = os.getcwd()
+    for filename in os.listdir(directory):
+        if filename.endswith(".sbactorpack") and filename.startswith("Npc_"):
+            os.system("tools\BotwUnpacker.exe /d \""+filename+"\" temp.bactorpack")
+            os.system("tools\BotwUnpacker.exe /u temp.bactorpack "+os.path.splitext(filename)[0])
+            if os.path.exists("temp.bactorpack"):
+                os.remove("temp.bactorpack")
+def buildActorPacks():
+    directory = os.getcwd()
+    flag = ""
+    choice = ""
+    while (choice != "1" and choice != "2"):
+        choice = input("Is this for the Wii U Version? [1 = Wii U|2 = Switch]: ")
+    if choice == "1":
+        flag = "/b"
+    else:
+        flag = "/bs"
+    for dirs in filter(os.path.isdir, os.listdir(directory)):
+        if dirs.startswith("Npc_"):
+            os.system("tools\BotwUnpacker.exe "+flag+" \""+dirs+"\" temp.out.pack")
+            os.system("tools\BotwUnpacker.exe /e temp.out.pack "+dirs+".out.sbactorpack")
+            
+def convMiitoUmii():
+    directory = os.getcwd()
+    npc = input("Enter NPC directory (or drag and drop): ")
+    mii = input("Enter Mii file name (or drag and drop): ")
 
+    copy(mii, ".\\tools\\temp.mii")
+    for filename in os.listdir(npc+"\\Actor\\Umii\\"):
+        if filename.endswith(".bumii"):
+            copy(npc+"\\Actor\\Umii\\"+filename, ".\\tools\\temp.bumii")
+    os.system(".\\tools\\aampTool.exe .\\tools\\temp.bumii")
+    readBinaryMii(".\\tools\\temp.mii")
+    writeUMii(".\\tools\\temp.bumii.xml", ".\\tools\\FinalResult.bumii.xml")
+    os.system(".\\tools\\aampTool.exe .\\tools\\FinalResult.bumii.xml")
+    copy(".\\tools\\FinalResult.bumii.aamp", "FinalResult.bumii")
+    os.remove(".\\tools\\temp.bumii.xml")
+    os.remove(".\\tools\\temp.bumii")
+    os.remove(".\\tools\\temp.mii")
+    os.remove(".\\tools\\FinalResult.bumii.aamp")
+    os.remove(".\\tools\\FinalResult.bumii.xml")
+            
 def main():
-    if len(sys.argv) < 3:
-        print("Usage: yewmiiconv miifile.mii input.bumii.xml output.bumii.xml")
-        return(1)
+    verstring = "v0.1"
+    while True:
+        print("YewMiiTools "+verstring+" by LeifEricson\
+\n\nChoose an option\n1. Extract .sbactorpack file(s)\n\
+2. Convert .Mii to .Bumii\n3. Rebuild .sbactorpack file\n")
+        choice = input("Enter choice: ")
 
-    miifilename = sys.argv[1]
-    xmlfilename = sys.argv[2]
-    outfilename = sys.argv[3]
-
-    readBinaryMii(miifilename)
-    writeUMii(xmlfilename, outfilename)
+        if (choice == "1"):
+            extractActorPacks()
+        elif (choice == "2"):
+            convMiitoUmii()
+        elif (choice == "3"):
+            buildActorPacks()
+        else:
+            print("Invalid option.")
+            return(1)
 
 if __name__ == "__main__":
     main()

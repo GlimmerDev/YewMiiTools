@@ -275,6 +275,7 @@ def buildActorPacks():
         if dirs.startswith("Npc_"):
             os.system("tools\BotwUnpacker.exe "+flag+" \""+dirs+"\" temp.out.pack")
             os.system("tools\BotwUnpacker.exe /e temp.out.pack "+dirs+".out.sbactorpack")
+            os.remove("temp.out.pack")
             
 def convMiitoUmii():
     directory = os.getcwd()
@@ -297,7 +298,7 @@ def convMiitoUmii():
     os.remove(".\\tools\\FinalResult.bumii.xml")
             
 def main():
-    verstring = "v0.1"
+    verstring = "v0.2"
     while True:
         print("YewMiiTools "+verstring+" by LeifEricson\
 \n\nChoose an option\n1. Extract .sbactorpack file(s)\n\

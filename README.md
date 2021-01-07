@@ -29,11 +29,11 @@ This is probably *far* from the most efficient way to do this conversion, but it
 
 1. The NPC disappears after I replace the file.
 
-This is likely caused by an incompatible value of your Mii. For example, the nose *must* be above the mouth, and it does not support sunglasses. Edit your Mii and try again.
+This is likely caused by an incompatible value of your Mii. For example, the nose *must* be above the mouth, and it does not support sunglasses (thanks @HEYimHeroic for those discoveries.) Edit your Mii and try again.
 
 2. Windows Defender is detecing the file as a virus.
 
-This tends to happen with certain applications, but python-based exe's especially. You might have to manually allow the file, or run using the python script if you feel uncomfortable.
+This tends to happen with certain applications, but Python-based exe's especially. You might have to manually allow the file, or run using the python script if you feel uncomfortable.
 
 ## Examples
 Dio Brando

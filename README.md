@@ -37,6 +37,11 @@ This tends to happen with certain applications, but Python-based exe's especiall
 ## Source
 If you wish to instead run the script from source, then you'll have to download the two tools mentioned above yourself (BotWUnpacker and BotW-aampTool) and place them in a subfolder called "tools". The script shouldn't have any extra library dependencies.
 
+## Planned Features
+* Integrate OpenEAD library (https://github.com/zeldamods/oead) to eliminiate external tool depedency
+* Auto check for invalid UMii values and correct them (or notify user)
+* Transfer more parameters such as body size and height
+
 ## Examples
 Dio Brando
 ![Dio](https://i.imgur.com/RANgWrH.jpg)

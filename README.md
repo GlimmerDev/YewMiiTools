@@ -1,5 +1,5 @@
 # YewMiiTools
-Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii.
+Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii. Works with both the Switch and Wii U versions.
 
 **Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/**
 

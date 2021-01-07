@@ -34,6 +34,9 @@ This is likely caused by an incompatible value of your Mii. For example, the nos
 
 This tends to happen with certain applications, but Python-based exe's especially. You might have to manually allow the file, or run using the python script if you feel uncomfortable.
 
+## Source
+If you wish to instead run the script from source, then you'll have to download the two tools mentioned above yourself (BotWUnpacker and BotW-aampTool) and place them in a subfolder called "tools". The script shouldn't have any extra library dependencies.
+
 ## Examples
 Dio Brando
 ![Dio](https://i.imgur.com/RANgWrH.jpg)

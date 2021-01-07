@@ -226,7 +226,10 @@ def writeUMii(filename, outfilename):
     nosescale = tnose.find('scale')
     nosescale.text = str(mii['nosescale'])
     nosey = tnose.find('trans_v')
-    nosey.text = str(mii['nosey'])
+    if (mii['nosey'] <= mii['musty']):
+        nosey.text = str(mii['nosey'])
+    else:
+        nosey.text = str(mii['musty'])
 
     mouth = tmouth.find('type')
     mouth.text = str(mii['mouth'])
@@ -236,6 +239,8 @@ def writeUMii(filename, outfilename):
     mouthscale.text = str(mii['mouthscale'])
     mouthaspect = tmouth.find('aspect')
     mouthaspect.text = str(mii['mouthaspect'])
+    mouthy = tmouth.find('trans_v')
+    mouthy.text = str(mii['mouthy'])
     
     mustache = tbeard.find('mustache')
     mustache.text = str(mii['mustache'])
@@ -247,7 +252,10 @@ def writeUMii(filename, outfilename):
     mustscale.text = str(mii['mustscale'])
 
     glasses = tglass.find('type')
-    glasses.text = str(mii['glasses'])
+    if (mii['glasses'] < 6):
+        glasses.text = str(mii['glasses'])
+    else:
+        glasses.text = str(1)
     glassescol = tglass.find('color')
     glassescol.text = str(mii['glassescol'])
 
@@ -261,6 +269,7 @@ def extractActorPacks():
             os.system("tools\BotwUnpacker.exe /u temp.bactorpack "+os.path.splitext(filename)[0])
             if os.path.exists("temp.bactorpack"):
                 os.remove("temp.bactorpack")
+                
 def buildActorPacks():
     directory = os.getcwd()
     flag = ""
@@ -282,15 +291,18 @@ def convMiitoUmii():
     npc = input("Enter NPC directory (or drag and drop): ")
     mii = input("Enter Mii file name (or drag and drop): ")
 
+    bumiiFile = ""
+
     copy(mii, ".\\tools\\temp.mii")
     for filename in os.listdir(npc+"\\Actor\\Umii\\"):
         if filename.endswith(".bumii"):
             copy(npc+"\\Actor\\Umii\\"+filename, ".\\tools\\temp.bumii")
+            bumiiFile = filename
     os.system(".\\tools\\aampTool.exe .\\tools\\temp.bumii")
     readBinaryMii(".\\tools\\temp.mii")
     writeUMii(".\\tools\\temp.bumii.xml", ".\\tools\\FinalResult.bumii.xml")
     os.system(".\\tools\\aampTool.exe .\\tools\\FinalResult.bumii.xml")
-    copy(".\\tools\\FinalResult.bumii.aamp", "FinalResult.bumii")
+    copy(".\\tools\\FinalResult.bumii.aamp", npc+"\\Actor\\Umii\\"+filename)
     os.remove(".\\tools\\temp.bumii.xml")
     os.remove(".\\tools\\temp.bumii")
     os.remove(".\\tools\\temp.mii")
@@ -298,11 +310,11 @@ def convMiitoUmii():
     os.remove(".\\tools\\FinalResult.bumii.xml")
             
 def main():
-    verstring = "v0.2"
+    verstring = "v0.3"
     while True:
         print("YewMiiTools "+verstring+" by LeifEricson\
 \n\nChoose an option\n1. Extract .sbactorpack file(s)\n\
-2. Convert .Mii to .Bumii\n3. Rebuild .sbactorpack file\n")
+2. Convert .mii to .bumii\n3. Rebuild .sbactorpack file\n")
         choice = input("Enter choice: ")
 
         if (choice == "1"):

@@ -1,6 +1,8 @@
 # YewMiiTools
 Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii. Works with both the Switch and Wii U versions.
 
+### Please use the (better) Mii to Umii tool by TheGreatRambler: https://github.com/TheGreatRambler/Mii_to_UMii
+
 **Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/**
 
 GBATemp thread & discussion: https://gbatemp.net/threads/yewmiitools-conversion-from-mii-to-botws-umii.580355

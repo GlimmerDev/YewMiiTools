@@ -3,8 +3,7 @@ Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii. Work
 
 ### Please use the (better) Mii to Umii tool by TheGreatRambler: https://github.com/TheGreatRambler/Mii_to_UMii
 
-**Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/**
-
+Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/
 GBATemp thread & discussion: https://gbatemp.net/threads/yewmiitools-conversion-from-mii-to-botws-umii.580355
 
 At the moment, there's still a few steps, but I plan to combine some of these steps to make it even easier. Also, I think I might be incorrectly converting the eye and eyebrow rotation values-- they don't seem to just directly copy over? If anyone can tell me how to convert them properly, please let me know.

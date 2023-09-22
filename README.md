@@ -6,9 +6,7 @@ Tool to help simplify conversion between 3DS/WiiU Mii and TLoZ:BoTW's UMii. Work
 Compiled Binaries/Tools: https://github.com/EBLeifEricson/YewMiiTools/releases/  
 GBATemp thread & discussion: https://gbatemp.net/threads/yewmiitools-conversion-from-mii-to-botws-umii.580355
 
-At the moment, there's still a few steps, but I plan to combine some of these steps to make it even easier. Also, I think I might be incorrectly converting the eye and eyebrow rotation values-- they don't seem to just directly copy over? If anyone can tell me how to convert them properly, please let me know.
-
-**There are some cosmetic values that do not exist in BotW. I plan to account for this eventually, but if your game crashes or the NPC is missing, try removing glasses, makeup, etc.**
+**There are some cosmetic values that do not exist in BotW. If your game crashes or the NPC is missing, try removing glasses, makeup, etc.**
 
 ## Usage
 1. Place desired NPC .sbactorpack file(s) from extracted game files into the same folder as the tool. These can be found in /romfs/Actor/Pack/, see here for NPC names: https://gbatemp.net/threads/botw-item-names-for-pandaonsmacks-trainer.463959/
